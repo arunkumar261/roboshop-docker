@@ -23,3 +23,7 @@ services:
     - catalogue
     # networks:
     # - roboshop
+
+  redis: 
+    image: redis:1.0.0
+    container_name: redis
