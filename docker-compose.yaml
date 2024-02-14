@@ -26,7 +26,7 @@ services:
 
 
   redis: 
-    image: redis:1.0.0
+    #image: redis:1.0.0
     container_name: redis
 
   # user:
