@@ -18,7 +18,7 @@ services:
     image: web:1.0.0
     container_name: web
     ports:
-    - "80:80"
+      - "80:80"
     depends_on:
     - catalogue
     # networks:
@@ -26,20 +26,20 @@ services:
 
 
   redis: 
-    #image: redis:1.0.0
-    # container_name: redis
+    image: redis:1.0.0
+    container_name: redis
 
-  # user:
-  #   image: user:1.0.0
-  #   container_name: user
-  #   depends_on:
-  #   - redis
-  #   - mongodb
+  user:
+    image: user:1.0.0
+    container_name: user
+    depends_on:
+    - redis
+    - mongodb
   
-  # cart:
-  #   image: cart:1.0.0
-  #   container_name: cart
-  #   depends_on:
-  #   - redis
-  #   - catalogue
+  cart:
+    image: cart:1.0.0
+    container_name: cart
+    depends_on:
+    - redis
+    - catalogue
 
