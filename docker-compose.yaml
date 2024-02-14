@@ -21,6 +21,9 @@ services:
       - "80:80"
     depends_on:
     - catalogue
+    - cart
+    - user
+    - shipping
     # networks:
     # - roboshop
 
@@ -46,4 +49,10 @@ services:
   mysql:
     image: mysql:1.0.0
     container_name: mysql
+
+  shipping:
+    image: shipping:1.0.0
+    container_name: shipping
+    depends_on:
+    - mysql
 
