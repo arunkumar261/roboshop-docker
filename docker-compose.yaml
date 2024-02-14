@@ -24,6 +24,7 @@ services:
     # networks:
     # - roboshop
 
+<<<<<<< HEAD
   redis: 
     image: redis:1.0.0
     container_name: redis
@@ -41,3 +42,8 @@ services:
     depends_on:
     - redis
     - catalogue
+=======
+  # redis: 
+  #   image: redis:1.0.0
+  #   container_name: redis
+>>>>>>> f46b3956e21a6e1366bd86e0395023146aebeb34
