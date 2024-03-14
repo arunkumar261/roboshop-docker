@@ -4,18 +4,18 @@ networks:
       name : roboshop
 services:
   mongodb:
-    image: mongodb:1.0.0
+    image: mongodb:v1
     container_name : mongodb
     # networks : 
     # - roboshop
 
   catalogue:
-    image: catalogue:1.0.0
+    image: catalogue:v1
     container_name: catalogue
     # networks:
     # - roboshop
   web:
-    image: web:1.0.0
+    image: web:v1
     container_name: web
     ports:
       - "80:80"
@@ -34,25 +34,25 @@ services:
     container_name: redis
 
   user:
-    image: user:1.0.0
+    image: user:v1
     container_name: user
     depends_on:
     - redis
     - mongodb
   
   cart:
-    image: cart:1.0.0
+    image: cart:v1
     container_name: cart
     depends_on:
     - redis
     - catalogue
 
   mysql:
-    image: mysql:1.0.0
+    image: mysql:v1
     container_name: mysql
 
   shipping:
-    image: shipping:1.0.0
+    image: shipping:v1
     container_name: shipping
     depends_on:
     - mysql
@@ -65,7 +65,7 @@ services:
     - RABBITMQ_DEFAULT_PASS=roboshop123
 
   payment:
-    image: payment:1.0.0
+    image: payment:v1
     container_name: payment
     depends_on:
     - rabbitmq
